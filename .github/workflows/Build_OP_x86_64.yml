@@ -11,9 +11,9 @@ on:
  release:
    types: [published]
 
- push:
-   branches: 
-    - master
+  push:
+    branches: 
+     - master
   run: git clone https://github.com/Lienol/openwrt-package package/openwrt-package
   - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
