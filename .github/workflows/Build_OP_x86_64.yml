@@ -14,10 +14,12 @@ on:
  push:
    branches: 
     - master
-   git clone https://github.com/Lienol/openwrt-package package/openwrt-package
-   cd openwrt 
-   ./scripts/feeds update -a 
-   ./scripts/feeds install -a
+  run: git clone https://github.com/Lienol/openwrt-package package/openwrt-package
+  - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
 
   #schedule:
   #  - cron: 0 8 * * 5
