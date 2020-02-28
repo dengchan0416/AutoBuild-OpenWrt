@@ -15,8 +15,7 @@ on:
    branches: 
     - master
    git clone https://github.com/Lienol/openwrt-package package/openwrt-package
-   ./scripts/feeds update -a
-   ./scripts/feeds install -a
+   ./scripts/feeds update -a && ./scripts/feeds install -a
 
   #schedule:
   #  - cron: 0 8 * * 5
